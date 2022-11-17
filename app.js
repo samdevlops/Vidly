@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 
 app.use(express.json());
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 
 mongoose.connect('mongodb://localhost:27017/vidly')
     .then(() => console.log("Successfully connected to mongodb database..."))
@@ -12,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/vidly')
 
 //GET root
 app.get('/', (req, res) => {
-    res.send("Home Page...");
+    res.send("Welcome to Vidly Application...");
 });
 
 const port = process.env.PORT || 8080;
