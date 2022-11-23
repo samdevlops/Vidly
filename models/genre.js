@@ -21,4 +21,5 @@ function validateName(name){
 }
 
 exports.Genre = Genre;
+exports.genreSchema = schema;
 exports.validateName = validateName;
